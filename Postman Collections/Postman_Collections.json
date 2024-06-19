@@ -923,9 +923,23 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0892affb-ef5b-4c7b-b0f0-90824a37e99c",
+				"id": "5af73735-4a37-4b8e-9e89-19cce4882c8b",
 				"type": "text/javascript",
 				"exec": [
+					"pm.sendRequest(\"https://postman-library-api.glitch.me/books\", function (err, res) {\r",
+					"    if (err) {\r",
+					"        console.log(err);\r",
+					"    } else {\r",
+					"        let books = res.json();\r",
+					"        if (books && books.length > 0) {\r",
+					"            let bookId = books[0].id; // Get the ID of the first book\r",
+					"            pm.collectionVariables.set(\"id\", bookId);\r",
+					"            console.log(\"Book ID set to:\", bookId);\r",
+					"        } else {\r",
+					"            console.log(\"No books found.\");\r",
+					"        }\r",
+					"    }\r",
+					"});\r",
 					""
 				]
 			}
@@ -933,7 +947,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "85fd2caf-c6cd-4252-89c2-a4887238d1e5",
+				"id": "98606228-e003-4ce1-bacb-a7eab041dc6d",
 				"type": "text/javascript",
 				"exec": [
 					""
