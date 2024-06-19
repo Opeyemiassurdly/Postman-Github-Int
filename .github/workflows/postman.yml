@@ -16,4 +16,4 @@ jobs:
         run: npm install -g newman
 
       - name: Run Postman Collection
-        run: newman run https://github.com/Opeyemiassurdly/Postman-Github-Int/blob/dev/Postman-%20An%20Introduction%20for%20Testers.postman_collection%20(2).json --environment=https://github.com/Opeyemiassurdly/Postman-Github-Int/blob/dev/Student_Expert_Env.postman_environment.json
+        run: newman run https://github.com/Opeyemiassurdly/Postman-Github-Int/blob/dev/Postman-%20An%20Introduction%20for%20Testers.postman_collection%20(2).json--environment=https://github.com/Opeyemiassurdly/Postman-Github-Int/blob/dev/Student_Expert_Env.postman_environment.json
