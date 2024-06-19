@@ -193,7 +193,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseUrl}}/books/gzJqGQFu8lA0-Ik",
+						"url": "{{baseUrl}}/books/{{id}}",
 						"description": "Gets a single book by id"
 					},
 					"response": [
@@ -923,7 +923,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "88781085-8dbe-4246-a350-8e1fe304accd",
+				"id": "2df73c74-bb80-4ba5-a07b-5cfb2fadb369",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -933,7 +933,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "ec502811-e5c3-4a48-ad8a-f328d7728291",
+				"id": "b84c1314-b6ce-4132-bb70-b319ac044436",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -945,6 +945,11 @@
 		{
 			"key": "baseUrl",
 			"value": "https://postman-library-api.glitch.me"
+		},
+		{
+			"key": "id",
+			"value": "id",
+			"type": "string"
 		}
 	]
 }
