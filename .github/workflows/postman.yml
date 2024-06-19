@@ -1,0 +1,19 @@
+name: Postman Collection Runner
+
+on:
+  push:
+    branches:
+      - main  # Change to your branch name
+
+jobs:
+  run_postman_collection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run Postman Collection
+        run: newman run https://github.com/Opeyemiassurdly/Postman-Github-Int/blob/dev/Postman-%20An%20Introduction%20for%20Testers.postman_collection%20(2).json--environment=https://github.com/Opeyemiassurdly/Postman-Github-Int/blob/dev/Student_Expert_Env.postman_environment.json
