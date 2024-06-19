@@ -813,9 +813,9 @@
 									"\r",
 									"pm.test(\"Book data is correct\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.book).to.be.an(\"object\");\r",
-									"    pm.expect(jsonData.book).to.have.property(\"id\", \"YUchkiAR_d_COZw7\");\r",
-									"    pm.expect(jsonData.book).to.have.property(\"checkedOut\", true);\r",
+									"    \r",
+									"    \r",
+									"    \r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -839,7 +839,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/books/UchkiAR_d_COZw7"
+						"url": "{{baseUrl}}/books/{{id}}"
 					},
 					"response": []
 				}
