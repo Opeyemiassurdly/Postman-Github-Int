@@ -22,7 +22,7 @@ jobs:
         if: always()
         continue-on-error: true
         run: |
-           newman run vsured-postman-collections/postman-collection-vsured-qa-c.json --reporters cli,allure
+           newman run vsured-superadmin-api-collections/vsured-superadmin-apis.json --reporters cli,allure
            echo "Postman tests run."
            continue-on-error: true
 
