@@ -5597,9 +5597,4855 @@
 								}
 							],
 							"id": "61943d16-7126-4277-a470-00c6c37c6dde"
+						},
+						{
+							"name": "New Folder",
+							"item": [],
+							"id": "4ea23252-206f-4610-b3fc-c6c823435f66"
 						}
 					],
 					"id": "1cb4f5a9-841f-4e8a-a97c-d9cf1231b26e"
+				},
+				{
+					"name": "super-admin Copy",
+					"item": [
+						{
+							"name": "accessCode",
+							"item": [
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "Get All Access Code",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "4e82e15b-5662-474a-9247-886096921dd6",
+														"exec": [
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"\r",
+															"var jsonData = pm.response.json();\r",
+															"\r",
+															"\r",
+															"pm.test(\"Response contains access codes\", function () {\r",
+															"    pm.expect(jsonData).to.have.property('access_codes');\r",
+															"    pm.expect(jsonData.access_codes).to.be.an('array').that.is.not.empty;\r",
+															"});\r",
+															"\r",
+															"\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "e77c9362-6bd4-4b56-8264-acc0b7af053d",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"value": "{{Auth_token}}",
+														"key": "Authorization",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/super-admin/accessCode/all?Page=1&Size=1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"super-admin",
+														"accessCode",
+														"all"
+													],
+													"query": [
+														{
+															"key": "Page",
+															"value": "1",
+															"description": "The page number to retrieve"
+														},
+														{
+															"key": "Size",
+															"value": "1",
+															"description": "The number of items per page"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "1b11559d-8add-434b-8dc1-0f2a94cda5b2",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/accessCode/all?Page=1&Size=1",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"accessCode",
+																"all"
+															],
+															"query": [
+																{
+																	"description": "The page number to retrieve",
+																	"key": "Page",
+																	"value": "1"
+																},
+																{
+																	"description": "The number of items per page",
+																	"key": "Size",
+																	"value": "1"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got All Access Code\",\n    \"data\": []\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "ec47e3c3-e31d-47b2-a3ef-27380e01e0a8"
+								}
+							],
+							"id": "73927e8c-71be-47a4-9dcc-8f64296921ae"
+						},
+						{
+							"name": "forum",
+							"item": [
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "Get All Forum",
+											"id": "4e1c25aa-1e99-40ae-91b0-0c5a98a33db1",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{Auth_token}}"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/super-admin/forum/all?Page=1&Size=1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"super-admin",
+														"forum",
+														"all"
+													],
+													"query": [
+														{
+															"key": "Page",
+															"value": "1",
+															"description": "The page number to retrieve"
+														},
+														{
+															"key": "Size",
+															"value": "1",
+															"description": "The number of items per page"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "260ba9a1-dbf0-44c3-864f-cab37e17bf36",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/forum/all?Page=1&Size=1",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"forum",
+																"all"
+															],
+															"query": [
+																{
+																	"description": "The page number to retrieve",
+																	"key": "Page",
+																	"value": "1"
+																},
+																{
+																	"description": "The number of items per page",
+																	"key": "Size",
+																	"value": "1"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got All Forum\",\n    \"data\": []\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "e72d93ca-94b2-4d7b-b5d8-d18df6d48d57"
+								}
+							],
+							"id": "3964a37c-2fc1-46d6-93d4-5c6c94388c38"
+						},
+						{
+							"name": "appointment",
+							"item": [
+								{
+									"name": "community",
+									"item": [
+										{
+											"name": "{communityId}",
+											"item": [
+												{
+													"name": "Get Appointment by communityId",
+													"id": "b0ff5a98-576c-46cd-a926-db7e979b5657",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "apikey",
+															"apikey": {
+																"key": "Authorization",
+																"value": "{{apiKey}}",
+																"in": "header"
+															}
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/appointment/community/:communityId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"appointment",
+																"community",
+																":communityId"
+															],
+															"variable": [
+																{
+																	"id": "d80f125d-4fc8-4bba-8845-58fe81d8d98c",
+																	"key": "communityId",
+																	"value": "<string>",
+																	"description": "(Required) communityID of the Appointment to get"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "dce37c7b-ae66-4382-af13-3a6d6b6588ff",
+															"name": "Successful response",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/super-admin/appointment/community/:communityId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"super-admin",
+																		"appointment",
+																		"community",
+																		":communityId"
+																	],
+																	"variable": [
+																		{
+																			"key": "communityId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"example\": {\n    \"message\": \"Successfully got Appointment by communityId\"\n  }\n}"
+														}
+													]
+												}
+											],
+											"id": "10fb57d2-4e66-4f31-bf52-88dadbe7c84f"
+										}
+									],
+									"id": "0747a33e-6e92-40a3-a401-2427893376ec"
+								}
+							],
+							"id": "88654f4a-3b34-496e-a840-9e7af5e610c0"
+						},
+						{
+							"name": "businessCategory",
+							"item": [
+								{
+									"name": "create",
+									"item": [
+										{
+											"name": "Create Business Category",
+											"id": "52a6bdd0-e93a-479a-ba0a-3e41c79dae3a",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Name\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/businessCategory/create"
+											},
+											"response": [
+												{
+													"id": "c68202a1-30cd-4a63-b0b2-63758e1b6992",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"Name\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/super-admin/businessCategory/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Business Category Created successfully\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "d7a85146-0769-4581-8442-8fe343e5fe20"
+								},
+								{
+									"name": "{Id}",
+									"item": [
+										{
+											"name": "Get Business Category by Id",
+											"id": "baac7086-ebc4-4e87-ad40-cd5b5cf56e74",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/super-admin/businessCategory/:Id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"super-admin",
+														"businessCategory",
+														":Id"
+													],
+													"variable": [
+														{
+															"id": "2393fa8d-bf2f-42a4-b75e-85db602c7b7d",
+															"key": "Id",
+															"value": "<number>",
+															"description": "(Required) Id of the Business Category to get"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "8c055864-08c8-473f-992b-e4bb37228280",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/businessCategory/:Id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"businessCategory",
+																":Id"
+															],
+															"variable": [
+																{
+																	"key": "Id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got Business Category by Id\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "bfe8664d-cddf-4695-911a-dfd26e6318c9"
+								},
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "Get All Business Category",
+											"id": "12b0d1e4-041f-452d-8d86-2065dd39023d",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": "{{baseUrl}}/api/super-admin/businessCategory/all"
+											},
+											"response": [
+												{
+													"id": "7be94d5d-040f-4765-828b-d0795893a807",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": "{{baseUrl}}/api/super-admin/businessCategory/all"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got All Business Category\",\n    \"data\": []\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "a781dc11-0993-4e62-8945-ab2e474c12d5"
+								},
+								{
+									"name": "delete",
+									"item": [
+										{
+											"name": "Delete Business Category by Id",
+											"id": "790cdb3f-f9ae-4682-8f1e-83914a9a998a",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Id\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"Channel\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/businessCategory/delete"
+											},
+											"response": [
+												{
+													"id": "a5e227dd-629e-4853-a849-f6d448423e06",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"Id\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"Channel\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/super-admin/businessCategory/delete"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully Deleted Business Category\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "311fc121-2ed7-47ea-bf43-0d0f33bc3e57"
+								}
+							],
+							"id": "168cd2a6-84fc-4412-8644-c61d89225913"
+						},
+						{
+							"name": "i-report-category",
+							"item": [
+								{
+									"name": "create",
+									"item": [
+										{
+											"name": "Create i-report-category",
+											"id": "2085ec54-249d-4139-854e-b505a97e4b8f",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"CommunityId\": \"<string>\",\n  \"CreatorUserId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/i-report-category/create"
+											},
+											"response": [
+												{
+													"id": "0581e54e-d100-4675-ae21-d538cc0d8ddc",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"CommunityId\": \"<string>\",\n  \"CreatorUserId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/super-admin/i-report-category/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"i-report-category Created successfully\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "52c70255-d71f-48e5-9396-758571bee9d3"
+								},
+								{
+									"name": "update",
+									"item": [
+										{
+											"name": "{categoryId}",
+											"item": [
+												{
+													"name": "Create i-report-category",
+													"id": "b8d7dcd6-7969-4e5f-8d8f-bc19afa68451",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "apikey",
+															"apikey": {
+																"key": "Authorization",
+																"value": "{{apiKey}}",
+																"in": "header"
+															}
+														},
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/i-report-category/update/:categoryId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"i-report-category",
+																"update",
+																":categoryId"
+															],
+															"variable": [
+																{
+																	"id": "769f9e65-f548-4c18-8d18-7e8aee1c8df9",
+																	"key": "categoryId",
+																	"value": "<string>",
+																	"description": "(Required) categoryId of the i-report-category to update"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "8d17d3ef-ee2f-4de8-96bd-dabc3c50f092",
+															"name": "Successful response",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/super-admin/i-report-category/update/:categoryId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"super-admin",
+																		"i-report-category",
+																		"update",
+																		":categoryId"
+																	],
+																	"variable": [
+																		{
+																			"key": "categoryId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"example\": {\n    \"message\": \"i-report-category Created successfully\"\n  }\n}"
+														}
+													]
+												}
+											],
+											"id": "0eb38fdf-621d-4a27-8d33-487c569e380a"
+										}
+									],
+									"id": "38f08118-f880-40b3-93da-08cfc061fbab"
+								},
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "{CommunityId}",
+											"item": [
+												{
+													"name": "Get All I-Report-category by CommunityId",
+													"id": "bcc38a3a-df6a-4440-8533-05e7434f59f0",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "apikey",
+															"apikey": {
+																"key": "Authorization",
+																"value": "{{apiKey}}",
+																"in": "header"
+															}
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/i-report-category/all/:CommunityId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"i-report-category",
+																"all",
+																":CommunityId"
+															],
+															"variable": [
+																{
+																	"id": "df9b1bc0-7aee-45c7-b6c9-893c04a917ba",
+																	"key": "CommunityId",
+																	"value": "<string>",
+																	"description": "(Required) CommunityId of the i-report-category to get"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "cfd408b4-00ab-4457-86e2-d4a295f2595f",
+															"name": "Successful response",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/super-admin/i-report-category/all/:CommunityId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"super-admin",
+																		"i-report-category",
+																		"all",
+																		":CommunityId"
+																	],
+																	"variable": [
+																		{
+																			"key": "CommunityId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"example\": {\n    \"message\": \"Successfully got All I-Report-category\",\n    \"data\": []\n  }\n}"
+														}
+													]
+												}
+											],
+											"id": "b9aa1c65-ae5c-4b3b-bd02-7384cb5a4d11"
+										},
+										{
+											"name": "Get All I-Report-category",
+											"id": "7ac063a9-6f38-49a6-9e3b-d34520fa2972",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": "{{baseUrl}}/api/super-admin/i-report-category/all"
+											},
+											"response": [
+												{
+													"id": "0deb34a2-ee4a-4718-93fc-08eb62fa2edd",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": "{{baseUrl}}/api/super-admin/i-report-category/all"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got All I-Report-category\",\n    \"data\": []\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "2fa54016-856b-467b-8b03-0522e695ee9c"
+								},
+								{
+									"name": "delete",
+									"item": [
+										{
+											"name": "Delete I-Report-Category",
+											"id": "f8c58321-8758-4d67-b86e-f7cb7ddd07f3",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"CategoryId\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"Channel\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/i-report-category/delete"
+											},
+											"response": [
+												{
+													"id": "e77f3fd5-a90b-45b6-b00b-59c095903d72",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"CategoryId\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"Channel\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/super-admin/i-report-category/delete"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"I-Report Category deleted successfully\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "a97012e5-044e-465a-9aa9-afbecb7faf36"
+								}
+							],
+							"id": "6d70ee84-2599-466c-849d-059c1a77b25a"
+						},
+						{
+							"name": "service-provider-category",
+							"item": [
+								{
+									"name": "create",
+									"item": [
+										{
+											"name": "Create i-report-category",
+											"id": "1ce1c37d-db37-4c3d-85bf-48e60c7f4e38",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"CreatorUserId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/service-provider-category/create"
+											},
+											"response": [
+												{
+													"id": "f717814e-f5f7-4ab8-9506-ed091bc1c8a4",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"CreatorUserId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/super-admin/service-provider-category/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"service-provider-category Created successfully\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "41dee2bb-118d-4580-9962-b429bb0a4d90"
+								},
+								{
+									"name": "update",
+									"item": [
+										{
+											"name": "{categoryId}",
+											"item": [
+												{
+													"name": "Create i-report-category",
+													"id": "88351f1d-3dc0-4f19-9f2a-360cf13d7d02",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "apikey",
+															"apikey": {
+																"key": "Authorization",
+																"value": "{{apiKey}}",
+																"in": "header"
+															}
+														},
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/service-provider-category/update/:categoryId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"service-provider-category",
+																"update",
+																":categoryId"
+															],
+															"variable": [
+																{
+																	"id": "afed4b3b-0cff-47dd-b8c5-08cdbc1e29e5",
+																	"key": "categoryId",
+																	"value": "<string>",
+																	"description": "(Required) categoryId of the service-provider-category to update"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "eefd5ae0-eb44-4aa6-b44b-d70b12168523",
+															"name": "Successful response",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/super-admin/service-provider-category/update/:categoryId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"super-admin",
+																		"service-provider-category",
+																		"update",
+																		":categoryId"
+																	],
+																	"variable": [
+																		{
+																			"key": "categoryId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"example\": {\n    \"message\": \"service-provider-category Created successfully\"\n  }\n}"
+														}
+													]
+												}
+											],
+											"id": "0e9f6945-bf5b-434a-8da8-b66d8cb2b53c"
+										}
+									],
+									"id": "8a511c95-33a3-4034-b974-ce4a610fc484"
+								},
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "Get All I-Report-category",
+											"id": "bd906226-c9cc-4198-9560-c1fed859ef97",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": "{{baseUrl}}/api/super-admin/service-provider-category/all"
+											},
+											"response": [
+												{
+													"id": "f57da403-5c87-4ab2-a9f5-43c7ccf1991e",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": "{{baseUrl}}/api/super-admin/service-provider-category/all"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got All service-provider-category\",\n    \"data\": []\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "8dee132c-551f-42e7-86cb-35e74a4306c7"
+								},
+								{
+									"name": "delete",
+									"item": [
+										{
+											"name": "Delete Service-provider-Category",
+											"id": "c4b18dcf-0153-403e-91bb-2d068bc24c5e",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"CategoryId\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"Channel\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/service-provider-category/delete"
+											},
+											"response": [
+												{
+													"id": "5a1cac89-856a-4028-929f-675b9bb7d265",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"CategoryId\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"Channel\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/super-admin/service-provider-category/delete"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Service-Provider Category deleted successfully\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "3e277e08-6505-46b4-8174-a1608b515ca5"
+								}
+							],
+							"id": "9511b4fb-57ea-4af5-a73b-663b9d9f7ed7"
+						},
+						{
+							"name": "i-report",
+							"item": [
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "Get All I-Report",
+											"id": "f07f4d67-ca24-459b-a349-89a3b0f3c0a1",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/super-admin/i-report/all?Page=1&Size=1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"super-admin",
+														"i-report",
+														"all"
+													],
+													"query": [
+														{
+															"key": "Page",
+															"value": "1",
+															"description": "The page number to retrieve"
+														},
+														{
+															"key": "Size",
+															"value": "1",
+															"description": "The number of items per page"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "8a228cca-429f-479d-8b04-8a86e026831b",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/i-report/all?Page=1&Size=1",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"i-report",
+																"all"
+															],
+															"query": [
+																{
+																	"description": "The page number to retrieve",
+																	"key": "Page",
+																	"value": "1"
+																},
+																{
+																	"description": "The number of items per page",
+																	"key": "Size",
+																	"value": "1"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got All I-Report\",\n    \"data\": []\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "99a5720d-b4ed-4fc8-8d17-cffb52e27a77"
+								}
+							],
+							"id": "596f6826-3625-49e7-a3f4-5fea4e1600be"
+						},
+						{
+							"name": "role",
+							"item": [
+								{
+									"name": "create",
+									"item": [
+										{
+											"name": "Create super-admin-role",
+											"id": "9b3ada7a-8a6b-4abe-8f33-d13afb9ed018",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"ViewCommunity\": \"<boolean>\",\n  \"ActivateDeactivateCommunity\": \"<boolean>\",\n  \"CreateAdvert\": \"<boolean>\",\n  \"EditAdvert\": \"<boolean>\",\n  \"DeleteAdvert\": \"<boolean>\",\n  \"CreateSubscription\": \"<boolean>\",\n  \"EditSubscription\": \"<boolean>\",\n  \"DeleteSubscription\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/role/create"
+											},
+											"response": [
+												{
+													"id": "73de7b38-33ae-4ade-a3f0-223580ec69dd",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"ViewCommunity\": \"<boolean>\",\n  \"ActivateDeactivateCommunity\": \"<boolean>\",\n  \"CreateAdvert\": \"<boolean>\",\n  \"EditAdvert\": \"<boolean>\",\n  \"DeleteAdvert\": \"<boolean>\",\n  \"CreateSubscription\": \"<boolean>\",\n  \"EditSubscription\": \"<boolean>\",\n  \"DeleteSubscription\": \"<boolean>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/super-admin/role/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"super-admin-role Created successfully\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "8f1be837-1e7d-4596-96fd-a189b48e7c2a"
+								},
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "Get All super-admin-role",
+											"id": "9dca09c5-b124-4ad0-8eb0-bff59cdd88f3",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": "{{baseUrl}}/api/super-admin/role/all"
+											},
+											"response": [
+												{
+													"id": "3f700e4e-4597-4097-a127-296ce893ef88",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": "{{baseUrl}}/api/super-admin/role/all"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got All super-admin-role\",\n    \"data\": []\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "e5b49f8b-defb-4422-8dc2-63e2e1c8387b"
+								}
+							],
+							"id": "1bd95b21-ee14-4b40-9de3-e6b967079897"
+						},
+						{
+							"name": "team",
+							"item": [
+								{
+									"name": "create",
+									"item": [
+										{
+											"name": "Create super-admin-team",
+											"id": "da98bf68-5718-496c-8c3d-29c06bc99c40",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"Email\": \"<string>\",\n  \"Phone\": \"<string>\",\n  \"RoleId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/team/create"
+											},
+											"response": [
+												{
+													"id": "f02032dc-c774-48db-ac47-f2d0df0532d2",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"Email\": \"<string>\",\n  \"Phone\": \"<string>\",\n  \"RoleId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/super-admin/team/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"super-admin-team Created successfully\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "85c11468-97b1-4bf6-ba66-f033e0502d42"
+								}
+							],
+							"id": "61039c5f-7fb0-491e-9488-3e1f0ca6aba4"
+						},
+						{
+							"name": "advert",
+							"item": [
+								{
+									"name": "create",
+									"item": [
+										{
+											"name": "Create Advert",
+											"id": "1d842c4f-2c41-48d3-aaa9-4938e17b98b2",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "file",
+															"value": "<file>",
+															"type": "text"
+														},
+														{
+															"key": "Title",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "Type",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "TargetId",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "StartDate",
+															"value": "<Date>",
+															"type": "text"
+														},
+														{
+															"key": "EndDate",
+															"value": "<Date>",
+															"type": "text"
+														},
+														{
+															"key": "Content",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "Amount",
+															"value": "<string>",
+															"type": "text"
+														}
+													]
+												},
+												"url": "{{baseUrl}}/api/super-admin/advert/create"
+											},
+											"response": [
+												{
+													"id": "4032b4ff-d298-4efa-be8d-0ae4375c4bfb",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "multipart/form-data"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "file",
+																	"value": "<file>",
+																	"type": "text"
+																},
+																{
+																	"key": "Title",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "Type",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "TargetId",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "StartDate",
+																	"value": "<Date>",
+																	"type": "text"
+																},
+																{
+																	"key": "EndDate",
+																	"value": "<Date>",
+																	"type": "text"
+																},
+																{
+																	"key": "Content",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "Amount",
+																	"value": "<string>",
+																	"type": "text"
+																}
+															]
+														},
+														"url": "{{baseUrl}}/api/super-admin/advert/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Advert created Successful\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "03042a26-0205-488d-8a45-dd676895e697"
+								},
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "Get All Advert",
+											"id": "31945191-66f5-4a11-99b1-7f846f2054e2",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/super-admin/advert/all?Page=1&Size=1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"super-admin",
+														"advert",
+														"all"
+													],
+													"query": [
+														{
+															"key": "Page",
+															"value": "1",
+															"description": "The page number to retrieve"
+														},
+														{
+															"key": "Size",
+															"value": "1",
+															"description": "The number of items per page"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "955d2942-fc44-4bfa-ac7f-7d7574363726",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/advert/all?Page=1&Size=1",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"advert",
+																"all"
+															],
+															"query": [
+																{
+																	"description": "The page number to retrieve",
+																	"key": "Page",
+																	"value": "1"
+																},
+																{
+																	"description": "The number of items per page",
+																	"key": "Size",
+																	"value": "1"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got All Advert\",\n    \"data\": []\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "f2d81fec-bf24-484f-897b-89d320f23fa3"
+								},
+								{
+									"name": "{Id}",
+									"item": [
+										{
+											"name": "Get advert by Id",
+											"id": "a7da1788-6577-47c4-b3e1-6e58cb26a276",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/super-admin/advert/:Id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"super-admin",
+														"advert",
+														":Id"
+													],
+													"variable": [
+														{
+															"id": "b5bd7564-921e-4bd1-b4d6-a11a03fc1796",
+															"key": "Id",
+															"value": "<int>",
+															"description": "(Required) Id of the advert to get"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "31b3f331-dcb0-4130-86c9-90c24be7a57d",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/advert/:Id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"advert",
+																":Id"
+															],
+															"variable": [
+																{
+																	"key": "Id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got Advert by Id\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "40e4339b-3831-4c54-85c7-0ef19edbf334"
+								}
+							],
+							"id": "c718ea68-3924-4792-8a96-2f3cca6e25b8"
+						},
+						{
+							"name": "audience",
+							"item": [
+								{
+									"name": "create",
+									"item": [
+										{
+											"name": "Create Target Audience",
+											"id": "0e430698-7e4d-4011-b085-2e6a41043eb0",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Name\": \"<string>\",\n  \"Allow_Male\": \"<boolean>\",\n  \"Allow_Female\": \"<boolean>\",\n  \"Allow_18_29\": \"<boolean>\",\n  \"Allow_30_49\": \"<boolean>\",\n  \"Allow_50_Plus\": \"<boolean>\",\n  \"Allow_Role_Community_Admin\": \"<boolean>\",\n  \"Allow_Role_SubAdmin\": \"<boolean>\",\n  \"Allow_Role_Checker\": \"<boolean>\",\n  \"Allow_Role_Member\": \"<boolean>\",\n  \"Allow_Role_Dependant\": \"<boolean>\",\n  \"CommunityIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/audience/create"
+											},
+											"response": [
+												{
+													"id": "5a1cbf44-5fda-4187-b527-940e27fe7b7b",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"Name\": \"<string>\",\n  \"Allow_Male\": \"<boolean>\",\n  \"Allow_Female\": \"<boolean>\",\n  \"Allow_18_29\": \"<boolean>\",\n  \"Allow_30_49\": \"<boolean>\",\n  \"Allow_50_Plus\": \"<boolean>\",\n  \"Allow_Role_Community_Admin\": \"<boolean>\",\n  \"Allow_Role_SubAdmin\": \"<boolean>\",\n  \"Allow_Role_Checker\": \"<boolean>\",\n  \"Allow_Role_Member\": \"<boolean>\",\n  \"Allow_Role_Dependant\": \"<boolean>\",\n  \"CommunityIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/super-admin/audience/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Target Audience Created successfully\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "e6d4b55f-adb9-4463-a3d9-f6c8af9be1cd"
+								}
+							],
+							"id": "485794c8-7e80-4937-ae01-e9d1034a2482"
+						},
+						{
+							"name": "target-audience",
+							"item": [
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "Get All Target Audience",
+											"id": "9156e513-1a40-47b0-891c-5499703fd20b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": "{{baseUrl}}/api/super-admin/target-audience/all"
+											},
+											"response": [
+												{
+													"id": "bd25621e-87ff-4630-aa0f-cc53eb8a4140",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": "{{baseUrl}}/api/super-admin/target-audience/all"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got All Target Audience\",\n    \"data\": []\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "de7b8099-c845-4ec7-8c1b-827c2f8c47c0"
+								}
+							],
+							"id": "ef79dcd2-5668-4e41-b4b8-73f3cd74b2a8"
+						},
+						{
+							"name": "panic-type",
+							"item": [
+								{
+									"name": "create",
+									"item": [
+										{
+											"name": "Create Transaction",
+											"id": "efc3db06-0a1a-4bb6-86aa-e2d80081d64c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"CreatorPhone\": \"<string>\",\n  \"CreatorUserId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/panic-type/create"
+											},
+											"response": [
+												{
+													"id": "b05962cc-9a1f-455d-a650-4c0414c5f206",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"CreatorPhone\": \"<string>\",\n  \"CreatorUserId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/super-admin/panic-type/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Panic Type Created successfully\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "3f306b7d-15d2-46d7-bbc3-280c883660ee"
+								},
+								{
+									"name": "update",
+									"item": [
+										{
+											"name": "{panicTypeId}",
+											"item": [
+												{
+													"name": "Create Panic Type",
+													"id": "a1060d02-c555-4d56-8c40-23bca1e9a602",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "apikey",
+															"apikey": {
+																"key": "Authorization",
+																"value": "{{apiKey}}",
+																"in": "header"
+															}
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/panic-type/update/:panicTypeId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"panic-type",
+																"update",
+																":panicTypeId"
+															],
+															"variable": [
+																{
+																	"id": "fe853688-05be-43ad-ab6d-b88cb69e03bc",
+																	"key": "panicTypeId",
+																	"value": "<string>",
+																	"description": "(Required) panicTypeId of the Panic Type to update"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "5aa5e3e4-77f9-4ea3-8a16-0ab8bd3c50a9",
+															"name": "Successful response",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/super-admin/panic-type/update/:panicTypeId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"super-admin",
+																		"panic-type",
+																		"update",
+																		":panicTypeId"
+																	],
+																	"variable": [
+																		{
+																			"key": "panicTypeId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"example\": {\n    \"message\": \"Panic Type Updated successfully\"\n  }\n}"
+														}
+													]
+												}
+											],
+											"id": "a8ff7c56-a759-4729-adca-f21129e41c4c"
+										}
+									],
+									"id": "844e658e-886a-4397-8dad-efeaf8dec2b9"
+								},
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "Get All Panics",
+											"id": "74c65c64-b9d3-4c23-99e2-da571dae2c87",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/super-admin/panic-type/all?Page=1&Size=1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"super-admin",
+														"panic-type",
+														"all"
+													],
+													"query": [
+														{
+															"key": "Page",
+															"value": "1",
+															"description": "The page number to retrieve"
+														},
+														{
+															"key": "Size",
+															"value": "1",
+															"description": "The number of items per page"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "96cef609-1207-4980-bf2e-1a9cca9c61ce",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/panic-type/all?Page=1&Size=1",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"panic-type",
+																"all"
+															],
+															"query": [
+																{
+																	"description": "The page number to retrieve",
+																	"key": "Page",
+																	"value": "1"
+																},
+																{
+																	"description": "The number of items per page",
+																	"key": "Size",
+																	"value": "1"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got All Panics-Types\",\n    \"data\": []\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "f1b8f2e4-ad82-4ee1-bf79-c554327ccda3"
+								},
+								{
+									"name": "{Id}",
+									"item": [
+										{
+											"name": "Get Panic Type by Id",
+											"id": "67cf063a-e84c-4e9d-9419-1be2ef619aaf",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/super-admin/panic-type/:Id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"super-admin",
+														"panic-type",
+														":Id"
+													],
+													"variable": [
+														{
+															"id": "3deed0e8-a9bc-40e5-9bd0-93828c4d2508",
+															"key": "Id",
+															"value": "<int>",
+															"description": "(Required) Id of the Panic Type to get"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "d223fe66-50b3-4ba4-9ce1-352865633c00",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/panic-type/:Id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"panic-type",
+																":Id"
+															],
+															"variable": [
+																{
+																	"key": "Id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got Panic Type by Id\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "2c18c107-ff52-4a5f-b174-7fb2f2213bc3"
+								},
+								{
+									"name": "delete",
+									"item": [
+										{
+											"name": "Delete Panic Type",
+											"id": "5749d189-eb74-4699-b49e-669135389101",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"PanicTypeId\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"Channel\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/panic-type/delete"
+											},
+											"response": [
+												{
+													"id": "d0b0e7fa-f38d-4805-83fe-2d91cbfd7cfe",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"PanicTypeId\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"Channel\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/super-admin/panic-type/delete"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Panic Type deleted successfully\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "481e9f04-e508-41cb-81e7-6736b81b1251"
+								}
+							],
+							"id": "e8e21a45-e4f7-4b13-a278-4d7a8b4ec47e"
+						},
+						{
+							"name": "statistics",
+							"item": [
+								{
+									"name": "Get All Super Admin Statistics",
+									"id": "0ea0ced4-86e2-42c7-884f-f67b80ccff05",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": {
+												"key": "Authorization",
+												"value": "{{apiKey}}",
+												"in": "header"
+											}
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/api/super-admin/statistics"
+									},
+									"response": [
+										{
+											"id": "cffac425-6b45-452f-ad13-c4aea3cdeb08",
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "Authorization",
+														"value": "<API Key>"
+													}
+												],
+												"url": "{{baseUrl}}/api/super-admin/statistics"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"example\": {\n    \"message\": \"Successfully got All Super Admin Statistics\",\n    \"data\": []\n  }\n}"
+										}
+									]
+								}
+							],
+							"id": "a20bd3ba-2e73-44ed-bc0a-6bf0890417a9"
+						},
+						{
+							"name": "panic",
+							"item": [
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "Get All Panics",
+											"id": "fa10f046-29de-4448-9ee0-de2f3a47c12b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/super-admin/panic/all?Page=1&Size=1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"super-admin",
+														"panic",
+														"all"
+													],
+													"query": [
+														{
+															"key": "Page",
+															"value": "1",
+															"description": "The page number to retrieve"
+														},
+														{
+															"key": "Size",
+															"value": "1",
+															"description": "The number of items per page"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "e2e8a454-3ed8-42b8-bbb9-1db352db048f",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/panic/all?Page=1&Size=1",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"panic",
+																"all"
+															],
+															"query": [
+																{
+																	"description": "The page number to retrieve",
+																	"key": "Page",
+																	"value": "1"
+																},
+																{
+																	"description": "The number of items per page",
+																	"key": "Size",
+																	"value": "1"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got All Panics\",\n    \"data\": []\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "cce9ae2d-3ab4-49e9-a610-c5c4aba91530"
+								}
+							],
+							"id": "723c2c86-e8ce-4ddd-957c-93f47ce27751"
+						},
+						{
+							"name": "transaction",
+							"item": [
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "Get All Transactions",
+											"id": "4fd3ab95-c30c-4d20-a359-a5efa3ebeb42",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/super-admin/transaction/all?Page=1&Size=1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"super-admin",
+														"transaction",
+														"all"
+													],
+													"query": [
+														{
+															"key": "Page",
+															"value": "1",
+															"description": "The page number to retrieve"
+														},
+														{
+															"key": "Size",
+															"value": "1",
+															"description": "The number of items per page"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "e5b54d8a-d9c6-49bf-a21b-d30b0ecc41c1",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/transaction/all?Page=1&Size=1",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"transaction",
+																"all"
+															],
+															"query": [
+																{
+																	"description": "The page number to retrieve",
+																	"key": "Page",
+																	"value": "1"
+																},
+																{
+																	"description": "The number of items per page",
+																	"key": "Size",
+																	"value": "1"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got All Transaction\",\n    \"data\": []\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "7543bbf3-70ab-48c5-82b1-1b35b7b2240f"
+								}
+							],
+							"id": "ae89327d-1aa2-4869-8671-7c96e4e4e893"
+						},
+						{
+							"name": "code-category",
+							"item": [
+								{
+									"name": "create",
+									"item": [
+										{
+											"name": "Create Static Code Category",
+											"id": "c2b74416-1d89-4995-8345-a54300d5381b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Name\": \"<string>\",\n  \"CreatorUserId\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/code-category/create"
+											},
+											"response": [
+												{
+													"id": "6e9a833f-546c-45da-9062-c4e2207d04eb",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"Name\": \"<string>\",\n  \"CreatorUserId\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/super-admin/code-category/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Static Code Category created successfully\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "3571662a-52ba-4cd9-96bd-59fc7e863437"
+								},
+								{
+									"name": "update",
+									"item": [
+										{
+											"name": "{categoryId}",
+											"item": [
+												{
+													"name": "Update Static Code Category",
+													"id": "49372cb7-fe7b-415f-a3fc-aa722ab35303",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "apikey",
+															"apikey": {
+																"key": "Authorization",
+																"value": "{{apiKey}}",
+																"in": "header"
+															}
+														},
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"Name\": \"<string>\",\n  \"CreatorUserId\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/code-category/update/:categoryId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"code-category",
+																"update",
+																":categoryId"
+															],
+															"variable": [
+																{
+																	"id": "f17cfd40-ba90-4b5e-8a47-a505c83c2ae5",
+																	"key": "categoryId",
+																	"value": "<string>",
+																	"description": "(Required) categoryId of the code category to update"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "4367f7ed-4d66-49e5-b5ae-a4952843a18c",
+															"name": "Successful response",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"Name\": \"<string>\",\n  \"CreatorUserId\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/super-admin/code-category/update/:categoryId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"super-admin",
+																		"code-category",
+																		"update",
+																		":categoryId"
+																	],
+																	"variable": [
+																		{
+																			"key": "categoryId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"example\": {\n    \"message\": \"Static Code Category Updated successfully\"\n  }\n}"
+														}
+													]
+												}
+											],
+											"id": "2fa8304d-c4b3-4091-be86-fa4ae3f57669"
+										}
+									],
+									"id": "847ae47e-da25-4dec-a310-c4f5cd5bba38"
+								},
+								{
+									"name": "delete",
+									"item": [
+										{
+											"name": "Delete code Category",
+											"id": "5240ce11-210e-4b89-ab07-03aa88934d3d",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"categoryId\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"Channel\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/code-category/delete"
+											},
+											"response": [
+												{
+													"id": "df727662-f95c-43bf-92b2-ea4108b318d5",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"categoryId\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"Channel\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/super-admin/code-category/delete"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Code Category deleted successfully\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "6ecf315e-ffd7-4f6d-8971-d3f03f161eae"
+								}
+							],
+							"id": "19a0c65d-66f0-4b9d-938b-0de1e809d328"
+						},
+						{
+							"name": "checkers",
+							"item": [
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "Get All Checkers",
+											"id": "4e48354b-13f2-4dad-a8ca-0995e42e9b6d",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{Auth_token}}"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": "{{baseUrl}}/api/super-admin/checkers/all"
+											},
+											"response": [
+												{
+													"id": "4444add0-68c5-498d-8149-43561aefa98c",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": "{{baseUrl}}/api/super-admin/checkers/all"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully get all checkers\",\n    \"data\": []\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "ba005b66-189b-4b8d-9f41-456b1344ff12"
+								},
+								{
+									"name": "community",
+									"item": [
+										{
+											"name": "{communityId}",
+											"item": [
+												{
+													"name": "Get Checkers by communityId",
+													"id": "0688f025-914c-4b37-a6db-982de17078a6",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "apikey",
+															"apikey": {
+																"key": "Authorization",
+																"value": "{{apiKey}}",
+																"in": "header"
+															}
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/checkers/community/:communityId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"checkers",
+																"community",
+																":communityId"
+															],
+															"variable": [
+																{
+																	"id": "1e194c90-153a-4b47-93e9-0d7fd48155d6",
+																	"key": "communityId",
+																	"value": "<string>",
+																	"description": "(Required) ID of the checker to get"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "f4ab9451-1994-42ae-a490-6d4e4817a0ed",
+															"name": "Successful response",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/super-admin/checkers/community/:communityId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"super-admin",
+																		"checkers",
+																		"community",
+																		":communityId"
+																	],
+																	"variable": [
+																		{
+																			"key": "communityId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"example\": {\n    \"message\": \"Successfully got Checkers by communityId\"\n  }\n}"
+														}
+													]
+												}
+											],
+											"id": "53754e82-8fe1-4f07-9af7-c902b122a6e7"
+										}
+									],
+									"id": "8307bb89-a9f5-40fe-8e5a-36ec1e00cfdc"
+								}
+							],
+							"id": "0b5251aa-09e8-4017-a6d9-d00dfc70ee9e"
+						},
+						{
+							"name": "community",
+							"item": [
+								{
+									"name": "all",
+									"item": [
+										{
+											"name": "Get All Communities",
+											"id": "7211002f-b596-41e2-afd2-291623210a2f",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/super-admin/community/all?Page=1&Size=1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"super-admin",
+														"community",
+														"all"
+													],
+													"query": [
+														{
+															"key": "Page",
+															"value": "1",
+															"description": "The page number to retrieve"
+														},
+														{
+															"key": "Size",
+															"value": "1",
+															"description": "The number of items per page"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "7cdcac95-8e60-41ac-8cd3-3958f6672f8e",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/community/all?Page=1&Size=1",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"community",
+																"all"
+															],
+															"query": [
+																{
+																	"description": "The page number to retrieve",
+																	"key": "Page",
+																	"value": "1"
+																},
+																{
+																	"description": "The number of items per page",
+																	"key": "Size",
+																	"value": "1"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Success Fetched All Communities\",\n    \"data\": []\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "45a1565d-5877-4bff-9f08-f561c04a7827"
+								},
+								{
+									"name": "profile",
+									"item": [
+										{
+											"name": "{channel}",
+											"item": [
+												{
+													"name": "Get Super Admin user profile by Phone or Email",
+													"id": "c0789e60-262e-4014-ba60-96cdace530e5",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "apikey",
+															"apikey": {
+																"key": "Authorization",
+																"value": "{{apiKey}}",
+																"in": "header"
+															}
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/profile/:channel",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"profile",
+																":channel"
+															],
+															"variable": [
+																{
+																	"id": "1cd5479d-a694-45dc-8c10-4ce7be328105",
+																	"key": "channel",
+																	"value": "<string>",
+																	"description": "(Required) channel of the Super Admin user profile to get"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "f61b274f-4a88-475f-b3ce-7a673c95753b",
+															"name": "Successful response",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/super-admin/profile/:channel",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"super-admin",
+																		"profile",
+																		":channel"
+																	],
+																	"variable": [
+																		{
+																			"key": "channel"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"example\": {\n    \"message\": \"Successfully got Super Admin user profile by channel\"\n  }\n}"
+														}
+													]
+												}
+											],
+											"id": "58733c92-169d-46e1-a160-c38ac454d4a9"
+										}
+									],
+									"id": "c1aae845-b468-4cda-af3e-fba24abd24b0"
+								}
+							],
+							"id": "7cb056ac-a57c-46fa-9932-d21cd620d768"
+						},
+						{
+							"name": "dependant",
+							"item": [
+								{
+									"name": "community",
+									"item": [
+										{
+											"name": "{communityId}",
+											"item": [
+												{
+													"name": "Get Dependant by communityId",
+													"id": "c796fede-a690-4567-a1cb-a06288e0a38c",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "apikey",
+															"apikey": {
+																"key": "Authorization",
+																"value": "{{apiKey}}",
+																"in": "header"
+															}
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/dependant/community/:communityId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"dependant",
+																"community",
+																":communityId"
+															],
+															"variable": [
+																{
+																	"id": "44c8c576-2cd5-4ba9-9c2e-b9ddd6f45385",
+																	"key": "communityId",
+																	"value": "<string>",
+																	"description": "(Required) ID of the Dependant to get"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "f5fd64a8-e587-43d3-b7d0-30052d3aced9",
+															"name": "Successful response",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/super-admin/dependant/community/:communityId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"super-admin",
+																		"dependant",
+																		"community",
+																		":communityId"
+																	],
+																	"variable": [
+																		{
+																			"key": "communityId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"example\": {\n    \"message\": \"Successfully got Dependant by communityId\"\n  }\n}"
+														}
+													]
+												}
+											],
+											"id": "8e147aa4-be6f-45c0-989d-ce114c38bff0"
+										}
+									],
+									"id": "73c32262-1e44-4cd5-979f-d6909e7eb972"
+								}
+							],
+							"id": "fd2f80c1-b152-4719-88af-30f945af9287"
+						},
+						{
+							"name": "member",
+							"item": [
+								{
+									"name": "community",
+									"item": [
+										{
+											"name": "{communityId}",
+											"item": [
+												{
+													"name": "Get Members by communityId",
+													"id": "7b1a0e01-3fa1-4298-99cd-64135ebca3b3",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "apikey",
+															"apikey": {
+																"key": "Authorization",
+																"value": "{{apiKey}}",
+																"in": "header"
+															}
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/member/community/:communityId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"member",
+																"community",
+																":communityId"
+															],
+															"variable": [
+																{
+																	"id": "c34cb7c8-9b7a-4725-b97e-5971f0f10a14",
+																	"key": "communityId",
+																	"value": "<string>",
+																	"description": "(Required) ID of the Members to get"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "2df59d48-1401-4ac9-8777-c1d5f5f930db",
+															"name": "Successful response",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/super-admin/member/community/:communityId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"super-admin",
+																		"member",
+																		"community",
+																		":communityId"
+																	],
+																	"variable": [
+																		{
+																			"key": "communityId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"example\": {\n    \"message\": \"Successfully got Members by communityId\"\n  }\n}"
+														}
+													]
+												}
+											],
+											"id": "76cafd9d-8c5c-4d69-b87a-025277866df0"
+										}
+									],
+									"id": "de0208ec-b64c-4f17-839f-405ed141304e"
+								}
+							],
+							"id": "6157e554-af22-4c5c-b096-c95a42e24342"
+						},
+						{
+							"name": "subAdmin",
+							"item": [
+								{
+									"name": "{communityId}",
+									"item": [
+										{
+											"name": "Get SubAdmin by communityId",
+											"id": "1e816cd2-146b-4860-aa16-4bfa82cdcb0a",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "Authorization",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/super-admin/subAdmin/:communityId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"super-admin",
+														"subAdmin",
+														":communityId"
+													],
+													"variable": [
+														{
+															"id": "224a8eb6-69b3-4dbf-a922-34638e97efa9",
+															"key": "communityId",
+															"value": "<string>",
+															"description": "(Required) ID of the SubAdmin to get"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "735a8e8b-854e-4a42-8f16-d393614c83f2",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/super-admin/subAdmin/:communityId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"super-admin",
+																"subAdmin",
+																":communityId"
+															],
+															"variable": [
+																{
+																	"key": "communityId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Successfully got subAdmin by communityId\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "0c5441bb-d96f-4c44-a53d-3038c2887d35"
+								}
+							],
+							"id": "0d22b23a-2b4b-4a5a-ab77-6ee8c916be5e"
+						},
+						{
+							"name": "login",
+							"item": [
+								{
+									"name": "Login User",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "ac56edd0-665f-4451-b637-72e576877c7d",
+												"exec": [
+													"pm.test(\"Set Access Token Value\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.environment.set(\"Auth_token\", jsonData.accessToken);    \r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "ca981ab7-27c7-4abe-b379-e807f607f5b9",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{accessToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Channel\": \"Vsured@gmail.com\",\n  \"Password\": \"Pa736456YTye\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/super-admin/login"
+									},
+									"response": [
+										{
+											"id": "a07706e3-1cbe-4d72-9bd4-50d97046f077",
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Channel\": \"<string>\",\n  \"Password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/login"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"example\": {\n    \"message\": \"Login Successfuly\"\n  }\n}"
+										}
+									]
+								}
+							],
+							"id": "7043cb85-aade-4f67-9050-8a75f8ac37a0"
+						},
+						{
+							"name": "forgotPassword",
+							"item": [
+								{
+									"name": "sendMail",
+									"item": [
+										{
+											"name": "Send Mail /SMS for super admin forgot password Validation",
+											"id": "59a40ace-7dca-4f51-8b8a-c5798750584f",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Channel\": \"<string>\",\n  \"DOB\": \"<string>\",\n  \"Medium\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/forgotPassword/sendMail"
+											},
+											"response": [
+												{
+													"id": "2212dba7-f2e7-4eac-aeab-cb21f4de5eda",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"Channel\": \"<string>\",\n  \"DOB\": \"<string>\",\n  \"Medium\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/super-admin/forgotPassword/sendMail"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Forgot Password Mail/SMS Sent Successfully\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "fa689bc5-3a61-4f00-84a7-953c00ba8ed6"
+								},
+								{
+									"name": "verify",
+									"item": [
+										{
+											"name": "Super Admin forgot password Mail /SMS Token Verification",
+											"id": "5023cd7f-760d-409c-b8e7-1571fef9a6aa",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Channel\": \"<string>\",\n  \"Token\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/forgotPassword/verify"
+											},
+											"response": [
+												{
+													"id": "74f16ed2-1bda-4841-9cbc-69d10ae66db0",
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"Channel\": \"<string>\",\n  \"Token\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/super-admin/forgotPassword/verify"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"example\": {\n    \"message\": \"Token Verification Successfully\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "aec5588f-25a5-42bb-bde3-d4e2cae459f0"
+								}
+							],
+							"id": "7f1f1d3e-fd86-4dc8-9fa0-9e2e7a51dd8d"
+						},
+						{
+							"name": "resetPassword",
+							"item": [
+								{
+									"name": "Reset Super Admin Password",
+									"id": "04465de8-edea-44e9-abe8-c70f8885ad21",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{accessToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"NewPassword\": \"<string>\",\n  \"ConfirmPassword\": \"<string>\",\n  \"Channel\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/super-admin/resetPassword"
+									},
+									"response": [
+										{
+											"id": "38bc25e7-1aa4-4600-866c-35719107efff",
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"NewPassword\": \"<string>\",\n  \"ConfirmPassword\": \"<string>\",\n  \"Channel\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/resetPassword"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"example\": {\n    \"message\": \"Password Reset Successfully\"\n  }\n}"
+										}
+									]
+								}
+							],
+							"id": "37300152-c486-472a-8506-37c1cbe0129f"
+						},
+						{
+							"name": "createPassword",
+							"item": [
+								{
+									"name": "Create Super Admin Password",
+									"id": "9f8e2e4c-ee6f-4f8d-82a5-c92612c3eb72",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Password\": \"<string>\",\n  \"ConfirmPassword\": \"<string>\",\n  \"Channel\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/super-admin/createPassword"
+									},
+									"response": [
+										{
+											"id": "7d158106-d199-4194-89eb-0b31a2d41fd6",
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Password\": \"<string>\",\n  \"ConfirmPassword\": \"<string>\",\n  \"Channel\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/super-admin/createPassword"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"example\": {\n    \"message\": \"Super Admin Password created  Successfully\"\n  }\n}"
+										}
+									]
+								}
+							],
+							"id": "72827f11-f12d-46eb-8fb9-e305821418a3"
+						}
+					],
+					"id": "43e60a43-adfa-4929-8ac1-2d61bd5cb18e"
 				},
 				{
 					"name": "forum",
